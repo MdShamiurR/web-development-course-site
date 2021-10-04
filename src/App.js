@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import AllNews from './Pages/AllNews/AllNews'
+import Home from './Pages/Home/Home';
+import Error from './Pages/Error/Error'
+import ContactUS from './Pages/ContactUs/ContactUS';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+
+        <Switch>
+
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
+          <Route exact path="/AboutUs">
+            <AboutUs></AboutUs>
+          </Route>
+          <Route exact path="/ContactUS">
+            <ContactUS></ContactUS>
+          </Route>
+          <Route exact path="/news/:sourceId">
+            <AllNews></AllNews>
+          </Route>
+
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="*">
+            <Error></Error>
+          </Route>
+        </Switch>
+      </Router>
+
     </div>
   );
 }
