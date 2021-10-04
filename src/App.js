@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
 import AboutUs from './Pages/AboutUs/AboutUs';
-import AllNews from './Pages/AllNews/AllNews'
+import AllNews from './Pages/AllNews/AllNews';
 import Home from './Pages/Home/Home';
 import Error from './Pages/Error/Error'
 import ContactUS from './Pages/ContactUs/ContactUS';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import OurCourse from './Components/OurCourses/OurCourse';
 
 
 
@@ -30,6 +31,10 @@ function App() {
           </Route>
           <Route exact path="/news/:sourceId">
             <AllNews></AllNews>
+          </Route>
+
+          <Route exact path="/OurCourses">
+            <OurCourse></OurCourse>
           </Route>
 
           <Route exact path="/">
